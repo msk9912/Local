@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/login_btn"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/nameEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="name"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/emailEt"
@@ -24,15 +28,17 @@
         android:hint="password"
         android:inputType="textPersonName" />
 
-    <Button
-        android:id="@+id/button"
+    <EditText
+        android:id="@+id/passwordcheckEdt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="LOGIN" />
+        android:ems="10"
+        android:hint="passwordcheck"
+        android:inputType="textPersonName" />
 
-    <TextView
-        android:id="@+id/register_t2"
+    <Button
+        android:id="@+id/register2_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="회원가입" />
+        android:text="Button" />
 </LinearLayout>
