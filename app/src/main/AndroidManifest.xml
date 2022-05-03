@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,13 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Local">
         <activity
-<<<<<<< HEAD
-            android:name=".MapActivity"
-            android:exported="true">
-=======
+
             android:name=".LoginActivity"
-            android:exported="true" >
->>>>>>> 6331a21894bdfd3f398aefaacb3122ec4e8b892a
+            android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,12 +24,11 @@
             </intent-filter>
         </activity>
 
-<<<<<<< HEAD
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCsNs39CpL8PZMi2VwndsG5asbxHoFPVC0" />
 
-=======
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
@@ -44,7 +41,8 @@
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->
 <!--            </intent-filter>-->
         </activity>
->>>>>>> 6331a21894bdfd3f398aefaacb3122ec4e8b892a
+        <activity android:name=".MapActivity"/>
+
     </application>
 
 </manifest>
