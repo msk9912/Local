@@ -16,6 +16,31 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+//지도
 public class MainActivity extends AppCompatActivity {
+    private FirebaseAuth mFirebaseAuth;
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        mFirebaseAuth = FirebaseAuth.getInstance();
+
+        Button logout_btn = findViewById(R.id.logout_btn);
+        logout_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //로그아웃 하기
+                mFirebaseAuth.signOut();
+
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        //탈퇴처리
+        //mFirebaseAuth.getCurrentUser().delete();
+    }
 }

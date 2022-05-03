@@ -7,6 +7,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+//마이페이지
 public class MyPageActivity extends AppCompatActivity {
 
     @Override
@@ -14,11 +15,12 @@ public class MyPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mypage);
 
-        Button set_btn = (Button) findViewById(R.id.set_btn);
+        //설정 버튼 눌렀을 때
+        Button set_btn = findViewById(R.id.set_btn);
         set_btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
+                Intent intent = new Intent(MyPageActivity.this, SettingsActivity.class);
                 startActivity(intent);
 
             }
