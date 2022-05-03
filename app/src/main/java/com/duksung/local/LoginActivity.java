@@ -17,6 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+//로그인창
 public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth mFirebaseAuth; //파이어베이스 인증
@@ -47,9 +48,13 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()) {
                             //로그인 성공!!!
+
                             Intent intent = new Intent(LoginActivity.this, MapActivity.class);
+
+               //             Intent intent = new Intent(LoginActivity.this, MyPageActivity.class);
+
                             startActivity(intent);
-                            finish();//현재 액티비티 파괴
+//                            finish();//현재 액티비티 파괴
                         }else{
                             Toast.makeText(LoginActivity.this, "로그인", Toast.LENGTH_SHORT).show();
                         }
