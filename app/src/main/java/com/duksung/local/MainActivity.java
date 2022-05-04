@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+//지도
 public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mFirebaseAuth;
 
@@ -26,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
 
         mFirebaseAuth = FirebaseAuth.getInstance();
 
-        Button btn_logout = findViewById(R.id.btn_logout);
-        btn_logout.setOnClickListener(new View.OnClickListener() {
+        Button logout_btn = findViewById(R.id.logout_btn);
+        logout_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //로그아웃 하기

@@ -1,7 +1,7 @@
 package com.duksung.local;
 
 // 사용자 계정 정보 모델 클래스
-
+//파이어베이스
 public class UserAccount {
     private String idToken;     //Firebase Uid(고유 토큰정보)
     private String emailId;     //이메일 아이디

@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Local</string>
+
+
+    <string name="title_signup">회원가입</string>
+    <string name="email">e-mail</string>
+    <string name="password">비밀번호</string>
+    <string name="password_check">비밀번호 확인</string>
+    <string name="button_signup">회원가입</string>
+
+
+    <string name="title_mypage">마이페이지</string>
+    <string name="mypage_nn">닉네임</string>
+    <string name="settings">설정</string>
+    <string name="but_logout">로그아웃</string>
+
 </resources>
