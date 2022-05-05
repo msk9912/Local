@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.duksung.local">
 
@@ -13,48 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Local">
         <activity
-
-            android:name=".LoginActivity"
-            android:exported="true">
-
+            android:name=".NoticeActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCsNs39CpL8PZMi2VwndsG5asbxHoFPVC0" />
-
         <activity
-            android:name=".MyPageActivity"
-            android:exported="true">
-            <!--<intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
-        </activity>
-
-
-        <activity android:name=".SettingsActivity"
-            android:exported="true">
-            <!--<intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
-        </activity>
-
-        <activity
-            android:name=".RegisterActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
             android:exported="true">
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
@@ -63,7 +30,49 @@
 <!--            </intent-filter>-->
         </activity>
 
-        <activity android:name=".MapActivity"/>
-</application>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCsNs39CpL8PZMi2VwndsG5asbxHoFPVC0" />
+
+        <activity
+            android:name=".MyPageActivity"
+            android:exported="true">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="true">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity android:name=".MapActivity" />
+    </application>
 
 </manifest>
