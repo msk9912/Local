@@ -82,6 +82,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 hashMap.put("uid", uid);
                                 hashMap.put("email", email);
                                 hashMap.put("nickname", nickname);
+                                hashMap.put("pwd", pwd);
 
                                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                                 DatabaseReference reference = database.getReference("Users");
