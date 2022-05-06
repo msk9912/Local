@@ -3,10 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Androidp/app/src/main/java/com/duksung/Local/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Androidp/app/src/main/java/com/duksung/Local/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Androidp/app/src/main/java/com/duksung/Local/app/src/main/res/layout/activity_map.xml" value="0.16111111111111112" />
         <entry key="..\:/Androidp/app/src/main/java/com/duksung/Local/app/src/main/res/layout/activity_notice.xml" value="0.16111111111111112" />
-        <entry key="..\:/Androidp/app/src/main/java/com/duksung/Local/app/src/main/res/layout/activity_register.xml" value="0.2" />
+        <entry key="..\:/Androidp/app/src/main/java/com/duksung/Local/app/src/main/res/layout/activity_register.xml" value="0.1" />
         <entry key="..\:/Androidp/app/src/main/java/com/duksung/Local/app/src/main/res/layout/activity_search.xml" value="0.264" />
         <entry key="..\:/Androidp/app/src/main/java/com/duksung/Local/app/src/main/res/layout/notice.xml" value="0.4" />
         <entry key="..\:/Androidp/app/src/main/java/com/duksung/Local/app/src/main/res/layout/sub.xml" value="0.11955420466058764" />
