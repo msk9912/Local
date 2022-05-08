@@ -3,6 +3,8 @@
     package="com.duksung.local">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
     <application
         android:allowBackup="true"
@@ -33,8 +35,13 @@
             android:name=".LoginActivity"
             android:exported="true">
 
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+
              <intent-filter>
              <action android:name="android.intent.action.MAIN" />
+
 
 
              <category android:name="android.intent.category.LAUNCHER" />
@@ -44,6 +51,10 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCsNs39CpL8PZMi2VwndsG5asbxHoFPVC0" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version"/>
 
         <activity
             android:name=".MyPageActivity"
@@ -80,10 +91,16 @@
             <!-- <action android:name="android.intent.action.MAIN" /> -->
 
 
+        <activity android:name=".MapActivity"/>
+
+</application>
+
+
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
         <activity android:name=".MapActivity" />
     </application>
+
 
 </manifest>
