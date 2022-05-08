@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "1092279639638",
+    "firebase_url": "https://for-local-shorts-default-rtdb.firebaseio.com",
     "project_id": "for-local-shorts",
     "storage_bucket": "for-local-shorts.appspot.com"
   },
@@ -26,43 +27,6 @@
           "client_type": 1,
           "android_info": {
             "package_name": "com.duksung.local",
-            "certificate_hash": "c59a5b185b48be595c57f7e7760727d9041bd39e"
-          }
-        },
-        {
-          "client_id": "1092279639638-r6hhkg2lva010j7p1rau3h1mefindu48.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCYPrw4RODYcKxsDi22bO9KCSPeAkcigng"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1092279639638-r6hhkg2lva010j7p1rau3h1mefindu48.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:1092279639638:android:9f85bcc500511875b625f7",
-        "android_client_info": {
-          "package_name": "com.localShorts.firebase"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "1092279639638-7g3c250ku19vioqmie1njk84qg4son9g.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.localShorts.firebase",
             "certificate_hash": "c59a5b185b48be595c57f7e7760727d9041bd39e"
           }
         },
