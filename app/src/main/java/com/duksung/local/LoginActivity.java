@@ -48,6 +48,8 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()) {
                             //로그인 성공!!!
+                            //
+
 
                             Intent intent = new Intent(LoginActivity.this, MyPageActivity.class);
 
@@ -57,6 +59,7 @@ public class LoginActivity extends AppCompatActivity {
 //                            finish();//현재 액티비티 파괴
                         }else{
                             Toast.makeText(LoginActivity.this, "로그인실패", Toast.LENGTH_SHORT).show();
+
                         }
                     }
                 });
