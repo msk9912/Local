@@ -51,14 +51,15 @@ public class LoginActivity extends AppCompatActivity {
                             //
 
 
-                            Intent intent = new Intent(LoginActivity.this, MapActivity.class);
+                            Intent intent = new Intent(LoginActivity.this, MyPageActivity.class);
 
                //             Intent intent = new Intent(LoginActivity.this, MyPageActivity.class);
 
                             startActivity(intent);
 //                            finish();//현재 액티비티 파괴
                         }else{
-                            Toast.makeText(LoginActivity.this, "로그인 실패", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "로그인실패", Toast.LENGTH_SHORT).show();
+
                         }
                     }
                 });
