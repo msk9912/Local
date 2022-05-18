@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    //게시물창
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        android:paddingBottom="30dp">
+
+        <CheckBox
+            android:id="@+id/post"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="게시물" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/post_view"
+            android:paddingLeft="50dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="공개범위" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <RadioButton
+                    android:id="@+id/post_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="친구" />
+
+                <RadioButton
+                    android:id="@+id/post_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="특정친구" />
+
+                <RadioButton
+                    android:id="@+id/post_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="전체" />
+
+            </RadioGroup>
+
+
+            <EditText
+                android:id="@+id/tag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="#태그" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="위치" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    //사운드태그창
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="30dp">
+        <!--enable="false"은 비활성화-->
+        <CheckBox
+            android:id="@+id/soundtag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="사운드태그" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/soundtag_view"
+            android:paddingLeft="50dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="공개범위" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <RadioButton
+                    android:id="@+id/soundtag_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="전체" />
+
+                <RadioButton
+                    android:id="@+id/soundtag_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="친구" />
+
+                <RadioButton
+                    android:id="@+id/soundtag_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="특정친구" />
+            </RadioGroup>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    //공유버튼
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/upload_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="공유" />
+    </LinearLayout>
+
+</LinearLayout>
+
