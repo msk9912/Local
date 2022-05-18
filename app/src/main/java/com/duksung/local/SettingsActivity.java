@@ -52,6 +52,7 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
+
         //닉네임수정하기(서버랑 연결+닉네임중복되는지 확인)
         final TextView nick=(TextView)findViewById(R.id.editNick_text); //닉네임텍스트
 

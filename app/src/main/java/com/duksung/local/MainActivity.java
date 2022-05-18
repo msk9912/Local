@@ -1,46 +1,40 @@
 package com.duksung.local;
 
-import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
-//지도
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
-    private FirebaseAuth mFirebaseAuth;
+
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter adapter;
+    private RecyclerView.LayoutManager layoutManager;
+    private ArrayList<UserAccount> arrayList;
+    private FirebaseDatabase database;
+    private DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mFirebaseAuth = FirebaseAuth.getInstance();
+        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true); //리사이클러뷰 기존성능 강화
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        arrayList = new ArrayList<>(); //User 객체를 담을 어레이 리스트 (어댑터쪽으로)
 
-        Button logout_btn = findViewById(R.id.logout_btn);
-        logout_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //로그아웃 하기
-                mFirebaseAuth.signOut();
+        database = FirebaseDatabase.getInstance(); //파이어베이스 데이터베이스 연동
 
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
-        //탈퇴처리
-        //mFirebaseAuth.getCurrentUser().delete();
+        databaseReference = database.getReference("UserAccount"); //DB 테이블 연결
     }
 }
