@@ -6,6 +6,13 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
+    <!--카메라가 있는 핸드폰만 플레이스토어에 뜨도록-->
+<!--    <uses-feature android:name="android.hardware.camera2" android:required="true"/>-->
+    <!--녹화-->
+<!--    <uses-permission android:name="android.permission.CAMERA"/>-->
+<!--    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>-->
+<!--    <uses-permission android:name="android.permission.RECORD_AUDIO"/>-->
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,16 +20,36 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Local">
+
+
+
+        <!--provider는 앱의 내부저장소(영상저장)에 접근할 수 있는 url만들고 이를 카메라 어플에 전달-->
+        <!--카메라 어플은 사진을 찍어 url이용해 내부 저장소에 저장, 결과를 앱에서 return-->
+<!--       <provider-->
+<!--            android:authorities="$(Local).provider"-->
+<!--            android:name="androidx.core.content.FileProvider"-->
+<!--            android:exported="false"-->
+<!--            android:grantUriPermissions="true">-->
+
+<!--            <meta-data-->
+<!--                android:name="android.support.FILE_PROVIDER_PATHS"-->
+<!--                android:resource="@xml/provider_paths" />-->
+<!--        </provider>-->
+
+
         <activity
-            android:name=".VideoActivity"
-            android:exported="true" >
+            android:name=".LoginActivity"
+            android:exported="true">
 
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+
+
+
         <activity
             android:name=".SearchActivity"
             android:exported="true">
@@ -45,15 +72,9 @@
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
-        <activity
-            android:name=".LoginActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+
+
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -86,14 +107,21 @@
             </intent-filter>
             -->
         </activity>
+
+
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
+
         <activity
             android:name=".MainActivity"
+
             android:exported="true" /> <!-- <intent-filter> -->
         <!-- <action android:name="android.intent.action.MAIN" /> -->
         <activity android:name=".MapActivity" />
+
+
+
     </application>
 
 </manifest>

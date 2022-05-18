@@ -1,9 +1,21 @@
 package com.duksung.local;
 
 
+import android.Manifest;
+import android.content.Intent;
+import android.hardware.Camera;
+import android.media.CamcorderProfile;
+import android.media.MediaRecorder;
+import android.os.Bundle;
+import android.provider.MediaStore;
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 
 import android.os.Bundle;
 
@@ -22,6 +34,12 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseDatabase database;
     private DatabaseReference databaseReference;
 
+
+
+
+    private SurfaceView surfaceView;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,4 +55,6 @@ public class MainActivity extends AppCompatActivity {
 
         databaseReference = database.getReference("UserAccount"); //DB 테이블 연결
     }
+
 }
+
