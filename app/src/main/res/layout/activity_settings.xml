@@ -6,10 +6,19 @@
     android:orientation="vertical">
 
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="설정"
+        android:textSize="20sp" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="10dp">
 
         <ImageView
             android:id="@+id/editImage"
@@ -23,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="74dp"
             android:layout_weight="1"
-            android:text="@string/mypage_nn"/>
+            android:text="@string/mypage_nn" />
 
 
         <Button
@@ -33,4 +42,11 @@
             android:layout_weight="1"
             android:text="@string/but_logout" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="80dp"
+        android:text="프로필 변경" />
 </LinearLayout>

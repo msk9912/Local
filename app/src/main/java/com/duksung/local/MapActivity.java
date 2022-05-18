@@ -14,6 +14,8 @@ import android.content.pm.PackageManager;
 
 import android.location.Location;
 import android.location.LocationManager;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Looper;
 import android.util.Log;
@@ -21,9 +23,22 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.MediaController;
+import android.widget.VideoView;
 
 
+import com.google.android.exoplayer2.ExoPlayerFactory;
+import com.google.android.exoplayer2.SimpleExoPlayer;
+import com.google.android.exoplayer2.source.ProgressiveMediaSource;
+import com.google.android.exoplayer2.trackselection.DefaultTrackSelector;
+import com.google.android.exoplayer2.ui.AspectRatioFrameLayout;
+import com.google.android.exoplayer2.ui.PlayerControlView;
+import com.google.android.exoplayer2.ui.PlayerView;
+import com.google.android.exoplayer2.upstream.DataSource;
+import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
@@ -39,7 +54,10 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firestore.v1.Write;
+
 import java.util.List;
 
 
@@ -57,6 +75,20 @@ public class MapActivity extends AppCompatActivity
     private static final int GPS_ENABLE_REQUEST_CODE = 2001;
     private static final int UPDATE_INTERVAL_MS = 1000;  // 1초
     private static final int FASTEST_UPDATE_INTERVAL_MS = 500; // 0.5초
+
+    //video view
+    PlayerView pv1;
+    PlayerView pv2;
+    PlayerView pv3;
+
+    Uri videoUri1= Uri.parse("https://firebasestorage.googleapis.com/v0/b/video-streaming-72a59.appspot.com/o/piano.mp4?alt=media&token=c6fc2b73-945f-4e07-8975-9247a61a7676");
+    Uri videoUri2= Uri.parse("https://firebasestorage.googleapis.com/v0/b/video-streaming-72a59.appspot.com/o/dolls.mp4?alt=media&token=8cd9ae51-5924-47c2-abbc-51bdd7b819b5");
+    Uri videoUri3= Uri.parse("https://firebasestorage.googleapis.com/v0/b/video-streaming-72a59.appspot.com/o/camera.mp4?alt=media&token=3bb7c838-05b4-4979-96c7-fbf219b80f92");
+
+    SimpleExoPlayer player1;
+    SimpleExoPlayer player2;
+    SimpleExoPlayer player3;
+
 
 
     // onRequestPermissionsResult에서 수신된 결과에서 ActivityCompat.requestPermissions를 사용한 퍼미션 요청을 구별하기 위해 사용됩니다.
@@ -77,8 +109,8 @@ public class MapActivity extends AppCompatActivity
     private Location location;
 
 
-    private View mLayout;  // Snackbar 사용하기 위해서는 View가 필요합니다.
-    // (참고로 Toast에서는 Context가 필요했습니다.)
+    private View mLayout;  // Snackbar 사용하기 위해서는 View가 필요
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,6 +122,7 @@ public class MapActivity extends AppCompatActivity
         setContentView(R.layout.activity_map);
 
         mLayout = findViewById(R.id.layout_main);
+
 
         locationRequest = new LocationRequest()
                 .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
@@ -109,6 +142,15 @@ public class MapActivity extends AppCompatActivity
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.googleMap);
         mapFragment.getMapAsync(this);
+
+        findViewById(R.id.addButton).setOnClickListener(onClickListener);
+        findViewById(R.id.plusButton).setOnClickListener(onClickListener);
+        pv1=findViewById(R.id.v1);
+        pv2=findViewById(R.id.v2);
+        pv3=findViewById(R.id.v3);
+
+
+
     }
 
     @Override
@@ -122,9 +164,9 @@ public class MapActivity extends AppCompatActivity
         setDefaultLocation();
 
         //마커 찍을곳 위치
-        LatLng cha = new LatLng(37.6533, 127.0162);
-        LatLng hak = new LatLng(37.6531, 127.0151);
-        LatLng lib = new LatLng(37.652640, 127.016016);
+        LatLng cha = new LatLng(37.6533, 127.0162); //차미리사관
+        LatLng hak = new LatLng(37.6531, 127.0151); //인문대
+        LatLng lib = new LatLng(37.652640, 127.016016); //도서관
 
         //마커 표시
         MarkerOptions markerOptioncha = new MarkerOptions();
@@ -196,9 +238,22 @@ public class MapActivity extends AppCompatActivity
 
         mMap.getUiSettings().setMyLocationButtonEnabled(true);
         // 현재 오동작을 해서 주석처리
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
+        //mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
 
     }
+    View.OnClickListener onClickListener = (v) -> {
+        switch (v.getId()){
+            case R.id.addButton:
+                Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.plusButton:
+                Intent intent2 = new Intent(getApplicationContext(), WritePostActivity.class);
+                startActivity(intent2);
+                break;
+
+        }
+    };
 
     LocationCallback locationCallback = new LocationCallback() {
         @Override
@@ -283,6 +338,39 @@ public class MapActivity extends AppCompatActivity
                 mMap.setMyLocationEnabled(true);
 
         }
+
+        //SimpleExoPlayer객체 생성
+        player1= ExoPlayerFactory.newSimpleInstance(this, new DefaultTrackSelector());
+        player2= ExoPlayerFactory.newSimpleInstance(this, new DefaultTrackSelector());
+        player3= ExoPlayerFactory.newSimpleInstance(this, new DefaultTrackSelector());
+
+        //플레이어뷰에게 플레이어 설정
+        pv1.setPlayer(player1);
+        pv2.setPlayer(player2);
+        pv3.setPlayer(player3);
+
+
+
+
+        //비디오데이터 소스를 관리하는 DataSource 객체를 만들어주는 팩토리 객체 생성
+        DataSource.Factory factory1= new DefaultDataSourceFactory(this,"Ex89VideoAndExoPlayer");
+        DataSource.Factory factory2= new DefaultDataSourceFactory(this,"Ex89VideoAndExoPlayer");
+        DataSource.Factory factory3= new DefaultDataSourceFactory(this,"Ex89VideoAndExoPlayer");
+        //비디오데이터를 Uri로 부터 추출해서 DataSource객체 (CD or LP판 같은 ) 생성
+        ProgressiveMediaSource mediaSource1= new ProgressiveMediaSource.Factory(factory1).createMediaSource(videoUri1);
+        ProgressiveMediaSource mediaSource2= new ProgressiveMediaSource.Factory(factory2).createMediaSource(videoUri2);
+        ProgressiveMediaSource mediaSource3= new ProgressiveMediaSource.Factory(factory3).createMediaSource(videoUri3);
+
+        //만들어진 비디오데이터 소스객체인 mediaSource를
+        //플레이어 객체에게 전당하여 준비하도록!![ 로딩하도록 !!]
+        player1.prepare(mediaSource1);
+        player2.prepare(mediaSource2);
+        player3.prepare(mediaSource3);
+
+
+        //로딩이 완료되어 준비가 되었을 때
+        //자동 실행되도록..
+        //player.setPlayWhenReady(true);
     }
 
 
@@ -296,6 +384,17 @@ public class MapActivity extends AppCompatActivity
             Log.d(TAG, "onStop : call stopLocationUpdates");
             mFusedLocationClient.removeLocationUpdates(locationCallback);
         }
+
+        //플레이어뷰 및 플레이어 객체 초기화
+        pv1.setPlayer(null);
+        pv2.setPlayer(null);
+        pv3.setPlayer(null);
+        player1.release();
+        player2.release();
+        player3.release();
+        player1=null;
+        player2=null;
+        player3=null;
     }
 
 
@@ -500,12 +599,17 @@ public class MapActivity extends AppCompatActivity
     public void onMapClick(@NonNull LatLng latLng) {
         LinearLayout cardView = (LinearLayout)findViewById(R.id.card_view);
         cardView.setVisibility(View.INVISIBLE);
+        FloatingActionButton plus_button = (FloatingActionButton)findViewById(R.id.plusButton);
+        plus_button.setVisibility(View.VISIBLE);
     }
 
     @Override
     public boolean onMarkerClick(@NonNull Marker marker) {
         LinearLayout cardView = (LinearLayout)findViewById(R.id.card_view);
         cardView.setVisibility(View.VISIBLE);
+        FloatingActionButton plus_button = (FloatingActionButton)findViewById(R.id.plusButton);
+        plus_button.setVisibility(View.INVISIBLE);
+
         return false;
     }
 
@@ -513,8 +617,11 @@ public class MapActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu)    {
         getMenuInflater().inflate(R.menu.mypage, menu);
+        getMenuInflater().inflate(R.menu.notice, menu);
         return true;
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -524,9 +631,22 @@ public class MapActivity extends AppCompatActivity
                 Intent intent = new Intent(this, MyPageActivity.class);
                 startActivity(intent);
                 return true;
+
+            case R.id.notice:
+                Intent intent2 = new Intent(this, NoticeActivity.class);
+                startActivity(intent2);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
+
+
+//    //화면에 안보일 때..
+//    @Override
+//    protected void onStop() {
+//        super.onStop();
+//
+//    }
 
 }

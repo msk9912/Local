@@ -3,14 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Androidp/app/src/main/java/com/duksung/Local/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Androidp/app/src/main/java/com/duksung/Local/app/src/main/res/layout/activity_main.xml" value="0.264" />
-        <entry key="..\:/Androidp/app/src/main/java/com/duksung/Local/app/src/main/res/layout/activity_map.xml" value="0.16111111111111112" />
-        <entry key="..\:/Androidp/app/src/main/java/com/duksung/Local/app/src/main/res/layout/activity_notice.xml" value="0.16111111111111112" />
-        <entry key="..\:/Androidp/app/src/main/java/com/duksung/Local/app/src/main/res/layout/activity_register.xml" value="0.1" />
-        <entry key="..\:/Androidp/app/src/main/java/com/duksung/Local/app/src/main/res/layout/activity_search.xml" value="0.264" />
-        <entry key="..\:/Androidp/app/src/main/java/com/duksung/Local/app/src/main/res/layout/notice.xml" value="0.4" />
+        <entry key="..\:/Androidp/app/src/main/java/com/duksung/Local/app/src/main/res/layout/activity_register.xml" value="0.2" />
         <entry key="..\:/Androidp/app/src/main/java/com/duksung/Local/app/src/main/res/layout/sub.xml" value="0.11955420466058764" />
+<<<<<<< HEAD
+        <entry key="..\:/Users/user/Desktop/locals/minseo/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.1835" />
+        <entry key="..\:/Users/user/Desktop/locals/minseo/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.12" />
+        <entry key="..\:/Users/user/Desktop/locals/minseo/app/src/main/res/layout/activity_login.xml" value="0.175" />
+=======
 <<<<<<< HEAD
         <entry key="..\:/Users/user/AndroidStudioProjects/Local_2/app/src/main/res/layout/activity_main.xml" value="0.176" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Local_2/app/src/main/res/layout/activity_map.xml" value="0.1" />
@@ -22,11 +22,25 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/Local_2/app/src/main/res/xml/provider_paths.xml" value="0.16145833333333334" />
 =======
         <entry key="..\:/Androidp/app/src/main/java/com/duksung/Local/app/src/main/res/menu/search_menu.xml" value="0.1" />
+>>>>>>> 255c5b3be44d384eae06336180b059459e0293bc
         <entry key="..\:/Users/user/Desktop/locals/minseo/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/user/Desktop/locals/minseo/app/src/main/res/layout/activity_map.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/user/Desktop/locals/minseo/app/src/main/res/layout/activity_mypage.xml" value="0.14166666666666666" />
         <entry key="..\:/Users/user/Desktop/locals/minseo/app/src/main/res/layout/activity_register.xml" value="0.12771739130434784" />
+        <entry key="..\:/Users/user/Desktop/locals/minseo/app/src/main/res/layout/activity_search.xml" value="0.175" />
+        <entry key="..\:/Users/user/Desktop/locals/minseo/app/src/main/res/layout/activity_search2.xml" value="0.175" />
+        <entry key="..\:/Users/user/Desktop/locals/minseo/app/src/main/res/layout/activity_settings.xml" value="0.11503623188405797" />
+        <entry key="..\:/Users/user/Desktop/locals/minseo/app/src/main/res/layout/activity_video.xml" value="0.1" />
+        <entry key="..\:/Users/user/Desktop/locals/minseo/app/src/main/res/layout/activity_write_post.xml" value="0.175" />
+        <entry key="..\:/Users/user/Desktop/locals/minseo/app/src/main/res/layout/exo_player_controll_view.xml" value="0.14166666666666666" />
+        <entry key="..\:/Users/user/Desktop/locals/minseo/app/src/main/res/layout/notice.xml" value="0.14270833333333333" />
         <entry key="..\:/Users/user/Desktop/locals/minseo/app/src/main/res/menu/mypage.xml" value="0.17916666666666667" />
+<<<<<<< HEAD
+        <entry key="..\:/Users/user/Desktop/locals/minseo/app/src/main/res/menu/notice.xml" value="0.14270833333333333" />
+        <entry key="..\:/Users/user/Desktop/locals/minseo/app/src/main/res/menu/search_menu.xml" value="0.175" />
+=======
 >>>>>>> f386d9de1ac5513eed3ba2416f0b3d53f8826499
+>>>>>>> 255c5b3be44d384eae06336180b059459e0293bc
       </map>
     </option>
   </component>

@@ -7,6 +7,8 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 //마이페이지
 public class MyPageActivity extends AppCompatActivity {
 
@@ -16,7 +18,7 @@ public class MyPageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_mypage);
 
         //설정 버튼 눌렀을 때
-        Button set_btn = findViewById(R.id.set_btn);
+        FloatingActionButton set_btn = (FloatingActionButton) findViewById(R.id.set_btn);
         set_btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
